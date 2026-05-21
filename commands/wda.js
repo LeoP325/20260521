@@ -16,6 +16,14 @@ export default async (event) => {
             },
           },
           {
+            type: 'action',
+            action: {
+              type: 'message',
+              text: '匯率',
+              label: '匯率',
+            },
+          },
+          {
             tpye: 'action',
             action: {
               type: 'postback',
