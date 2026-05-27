@@ -23,7 +23,7 @@ export default async (event) => {
       })
       .slice(0, 3)
       .map((value) => {
-        return `${value.name}: ${value.address}, 距離 ${value.distance}公里`
+        return `${value.name}: ${value.address}, 距離 ${Math.round(value.distance * 1000) / 1000}公里`
       })
 
     console.log(result)
