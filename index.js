@@ -3,6 +3,7 @@ import linebot from 'linebot'
 import commandExrates from './commands/exrate.js'
 import commandWda from './commands/wda.js'
 import commandCourse from './commands/course.js'
+import commandCafe from './commands/cafe.js'
 
 const bot = linebot({
   channelId: process.env.CHANNEL_ID,
@@ -12,7 +13,7 @@ const bot = linebot({
 
 bot.on('message', (event) => {
   // 一層一層 debug 看哪裡出錯
-  // console.log(1)
+  console.log(1)
   if (event.message.type === 'text') {
     // console.log(2)
     if (event.message.text === '匯率') {
@@ -21,6 +22,9 @@ bot.on('message', (event) => {
       // console.log(3)
       commandWda(event)
     }
+  } else if (event.message.type === 'location') {
+    commandCafe(event)
+    console.log(4)
   }
 })
 
