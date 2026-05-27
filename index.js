@@ -23,8 +23,8 @@ bot.on('message', (event) => {
       commandWda(event)
     }
   } else if (event.message.type === 'location') {
+    console.log(event.message)
     commandCafe(event)
-    console.log(4)
   }
 })
 
